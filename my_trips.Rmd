@@ -1,0 +1,24 @@
+
+## My Trips in 2017 by November 27, 2017
+
+```{r, echo =FALSE, warning= FALSE}
+library(leaflet)
+priyanka <- makeIcon(
+  iconUrl = "C:/Users/priya/Desktop/1.jpg",
+  iconWidth= 31*215/230, iconHeight=31,
+  iconAnchorX= 31*215/230/2, iconAnchorY = 16
+)
+
+my_trips <- data.frame(
+  lat=c(41.8781,32.7767, 30.2672, 46.5614, 39.7684),
+  lng=c(-87.6298, -96.7970, -97.7431, -86.3213, -86.1581))
+city_names<- c("Chicago", "Dallas", "Austin", "Pictured Rock", "Indianapolis")
+  
+my_trips %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon=priyanka, popup= city_names)
+
+```
+
+
